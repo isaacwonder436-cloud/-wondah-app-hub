@@ -10,57 +10,71 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
-      padding: 30px 20px;
+      padding: 25px 15px;
       background: #f2f2f2;
+      text-align: center;
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
-    p {
+    .subtitle {
       color: #666;
+      margin-bottom: 25px;
     }
 
     .app {
       display: block;
       width: 100%;
-      max-width: 400px;
-      margin: 15px auto;
-      padding: 18px;
+      max-width: 450px;
+      margin: 12px auto;
+      padding: 17px;
       box-sizing: border-box;
-      border: none;
-      border-radius: 12px;
       background: white;
-      font-size: 18px;
+      border-radius: 14px;
       text-decoration: none;
       color: #111;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .app:active {
+      transform: scale(0.98);
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Wondah App Hub</h1>
-  <p>Access your favorite services</p>
+  <h1>🚀 Wondah App Hub</h1>
+  <p class="subtitle">Your favorite apps in one place</p>
 
-  <a class="app" href="https://www.facebook.com">
-    📘 Facebook
-  </a>
+  <a class="app" href="https://www.facebook.com">📘 Facebook</a>
 
-  <a class="app" href="https://www.youtube.com">
-    ▶️ YouTube
-  </a>
+  <a class="app" href="https://www.youtube.com">▶️ YouTube</a>
 
-  <a class="app" href="https://www.tiktok.com">
-    🎵 TikTok
-  </a>
+  <a class="app" href="https://www.tiktok.com">🎵 TikTok</a>
 
-  <a class="app" href="https://www.instagram.com">
-    📸 Instagram
-  </a>
+  <a class="app" href="https://www.instagram.com">📸 Instagram</a>
+
+  <a class="app" href="https://web.whatsapp.com">💬 WhatsApp</a>
+
+  <a class="app" href="https://x.com">𝕏 X</a>
+
+  <a class="app" href="https://www.linkedin.com">💼 LinkedIn</a>
+
+  <a class="app" href="https://www.netflix.com">🎬 Netflix</a>
+
+  <a class="app" href="https://open.spotify.com">🎧 Spotify</a>
+
+  <a class="app" href="https://www.amazon.com">🛒 Amazon</a>
+
+  <a class="app" href="https://www.google.com">🔎 Google</a>
+
+  <a class="app" href="https://web.telegram.org">✈️ Telegram Web</a>
 
   <script>
     Telegram.WebApp.ready();
