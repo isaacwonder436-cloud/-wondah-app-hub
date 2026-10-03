@@ -1,85 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wondah App Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wondah App Hub</title>
 
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 25px 15px;
-      background: #f2f2f2;
-      text-align: center;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    h1 {
-      margin-bottom: 5px;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4f7;
+  color: #111;
+}
 
-    .subtitle {
-      color: #666;
-      margin-bottom: 25px;
-    }
+header {
+  background: #ffffff;
+  padding: 18px 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
 
-    .app {
-      display: block;
-      width: 100%;
-      max-width: 450px;
-      margin: 12px auto;
-      padding: 17px;
-      box-sizing: border-box;
-      background: white;
-      border-radius: 14px;
-      text-decoration: none;
-      color: #111;
-      font-size: 18px;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
+header h1 {
+  margin: 0;
+  font-size: 23px;
+}
 
-    .app:active {
-      transform: scale(0.98);
-    }
-  </style>
+header p {
+  margin: 5px 0 0;
+  color: #777;
+}
+
+#home {
+  padding: 18px 15px;
+}
+
+.app {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto;
+  display: block;
+  padding: 18px;
+  border: 0;
+  border-radius: 15px;
+  background: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.app:active {
+  transform: scale(.98);
+}
+
+#browser {
+  display: none;
+  height: calc(100vh - 70px);
+  background: white;
+}
+
+.toolbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.toolbar button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 13px;
+  font-size: 16px;
+  background: #eeeeee;
+}
+
+#siteName {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+iframe {
+  width: 100%;
+  height: calc(100% - 60px);
+  border: 0;
+}
+
+#message {
+  display: none;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+#message button {
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 16px;
+}
+</style>
 </head>
 
 <body>
 
+<header>
   <h1>🚀 Wondah App Hub</h1>
-  <p class="subtitle">Your favorite apps in one place</p>
+  <p>Apps in one place</p>
+</header>
 
-  <a class="app" href="https://www.facebook.com">📘 Facebook</a>
+<div id="home">
 
-  <a class="app" href="https://www.youtube.com">▶️ YouTube</a>
+  <button class="app" onclick="openApp('Facebook','https://www.facebook.com')">
+    📘 Facebook
+  </button>
 
-  <a class="app" href="https://www.tiktok.com">🎵 TikTok</a>
+  <button class="app" onclick="openApp('YouTube','https://www.youtube.com')">
+    ▶️ YouTube
+  </button>
 
-  <a class="app" href="https://www.instagram.com">📸 Instagram</a>
+  <button class="app" onclick="openApp('TikTok','https://www.tiktok.com')">
+    🎵 TikTok
+  </button>
 
-  <a class="app" href="https://web.whatsapp.com">💬 WhatsApp</a>
+  <button class="app" onclick="openApp('Instagram','https://www.instagram.com')">
+    📸 Instagram
+  </button>
 
-  <a class="app" href="https://x.com">𝕏 X</a>
+  <button class="app" onclick="openApp('WhatsApp','https://web.whatsapp.com')">
+    💬 WhatsApp
+  </button>
 
-  <a class="app" href="https://www.linkedin.com">💼 LinkedIn</a>
+  <button class="app" onclick="openApp('X','https://x.com')">
+    𝕏 X
+  </button>
 
-  <a class="app" href="https://www.netflix.com">🎬 Netflix</a>
+  <button class="app" onclick="openApp('LinkedIn','https://www.linkedin.com')">
+    💼 LinkedIn
+  </button>
 
-  <a class="app" href="https://open.spotify.com">🎧 Spotify</a>
+  <button class="app" onclick="openApp('Netflix','https://www.netflix.com')">
+    🎬 Netflix
+  </button>
 
-  <a class="app" href="https://www.amazon.com">🛒 Amazon</a>
+  <button class="app" onclick="openApp('Spotify','https://open.spotify.com')">
+    🎧 Spotify
+  </button>
 
-  <a class="app" href="https://www.google.com">🔎 Google</a>
+  <button class="app" onclick="openApp('Amazon','https://www.amazon.com')">
+    🛒 Amazon
+  </button>
 
-  <a class="app" href="https://web.telegram.org">✈️ Telegram Web</a>
+  <button class="app" onclick="openApp('Google','https://www.google.com')">
+    🔎 Google
+  </button>
 
-  <script>
-    Telegram.WebApp.ready();
-    Telegram.WebApp.expand();
-  </script>
+  <button class="app" onclick="openApp('Telegram Web','https://web.telegram.org')">
+    ✈️ Telegram Web
+  </button>
+
+</div>
+
+<div id="browser">
+
+  <div class="toolbar">
+    <button onclick="goHome()">⌂</button>
+    <button onclick="goBack()">‹</button>
+
+    <div id="siteName">Website</div>
+
+    <button onclick="reloadSite()">↻</button>
+  </div>
+
+  <iframe
+    id="siteFrame"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    referrerpolicy="no-referrer">
+  </iframe>
+
+</div>
+
+<div id="message">
+  <h2>Website cannot be displayed here</h2>
+  <p>
+    This service does not allow its website to be displayed
+    inside another app.
+  </p>
+</div>
+
+<script>
+
+const tg = window.Telegram.WebApp;
+
+tg.ready();
+tg.expand();
+
+let currentUrl = "";
+
+function openApp(name, url) {
+
+  currentUrl = url;
+
+  document.getElementById("home").style.display = "none";
+  document.querySelector("header").style.display = "none";
+  document.getElementById("browser").style.display = "block";
+
+  document.getElementById("siteName").textContent = name;
+
+  document.getElementById("siteFrame").src = url;
+}
+
+function goHome() {
+
+  document.getElementById("browser").style.display = "none";
+  document.getElementById("home").style.display = "block";
+  document.querySelector("header").style.display = "block";
+
+  document.getElementById("siteFrame").src = "";
+}
+
+function goBack() {
+
+  const frame = document.getElementById("siteFrame");
+
+  try {
+    frame.contentWindow.history.back();
+  } catch(e) {
+    goHome();
+  }
+}
+
+function reloadSite() {
+
+  const frame = document.getElementById("siteFrame");
+
+  frame.src = currentUrl;
+}
+
+</script>
 
 </body>
 </html>
