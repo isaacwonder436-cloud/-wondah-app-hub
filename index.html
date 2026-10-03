@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wondah App Hub</title>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 30px 20px;
+      background: #f2f2f2;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #666;
+    }
+
+    .app {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 15px auto;
+      padding: 18px;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 12px;
+      background: white;
+      font-size: 18px;
+      text-decoration: none;
+      color: #111;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Wondah App Hub</h1>
+  <p>Access your favorite services</p>
+
+  <a class="app" href="https://www.facebook.com">
+    📘 Facebook
+  </a>
+
+  <a class="app" href="https://www.youtube.com">
+    ▶️ YouTube
+  </a>
+
+  <a class="app" href="https://www.tiktok.com">
+    🎵 TikTok
+  </a>
+
+  <a class="app" href="https://www.instagram.com">
+    📸 Instagram
+  </a>
+
+  <script>
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+  </script>
+
+</body>
+</html>
