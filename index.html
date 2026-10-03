@@ -1,128 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Wondah App Hub</title>
+  <title>Wondah App Hub</title>
 
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-<style>
-body {
-  margin: 0;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background: #f2f4f7;
-  text-align: center;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-h1 {
-  margin-top: 10px;
-}
+    body {
+      margin: 0;
+      padding: 20px 15px 30px;
+      font-family: Arial, sans-serif;
+      background: #f2f4f7;
+      color: #111;
+    }
 
-p {
-  color: #666;
-}
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
 
-.app {
-  display: block;
-  width: 100%;
-  max-width: 450px;
-  margin: 12px auto;
-  padding: 18px;
-  border: none;
-  border-radius: 15px;
-  background: white;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
-  box-shadow: 0 2px 8px rgba(0,0,0,.08);
-}
+    .logo {
+      font-size: 45px;
+      margin-bottom: 5px;
+    }
 
-.app:active {
-  transform: scale(.97);
-}
-</style>
+    h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .subtitle {
+      color: #777;
+      margin-top: 8px;
+    }
+
+    .apps {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .app {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 17px;
+      margin: 12px 0;
+      border: 0;
+      border-radius: 16px;
+      background: white;
+      color: #111;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 42px;
+      font-size: 27px;
+      margin-right: 14px;
+    }
+
+    .arrow {
+      margin-left: auto;
+      color: #999;
+      font-size: 22px;
+    }
+
+    .app:active {
+      transform: scale(0.97);
+    }
+
+    .footer {
+      text-align: center;
+      color: #999;
+      font-size: 13px;
+      margin-top: 25px;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>🚀 Wondah App Hub</h1>
+  <div class="header">
+    <div class="logo">🚀</div>
+    <h1>Wondah App Hub</h1>
+    <div class="subtitle">Your favorite apps in one place</div>
+  </div>
 
-<p>Choose an app</p>
+  <div class="apps">
 
-<button class="app"
-onclick="openApp('https://www.facebook.com')">
-📘 Facebook
-</button>
+    <a class="app" href="https://www.facebook.com">
+      <span class="icon">📘</span>
+      Facebook
+      <span class="arrow">›</span>
+    </a>
 
-<button class="app"
-onclick="openApp('https://www.youtube.com')">
-▶️ YouTube
-</button>
+    <a class="app" href="https://www.youtube.com">
+      <span class="icon">▶️</span>
+      YouTube
+      <span class="arrow">›</span>
+    </a>
 
-<button class="app"
-onclick="openApp('https://www.tiktok.com')">
-🎵 TikTok
-</button>
+    <a class="app" href="https://www.tiktok.com">
+      <span class="icon">🎵</span>
+      TikTok
+      <span class="arrow">›</span>
+    </a>
 
-<button class="app"
-onclick="openApp('https://www.instagram.com')">
-📸 Instagram
-</button>
+    <a class="app" href="https://www.instagram.com">
+      <span class="icon">📸</span>
+      Instagram
+      <span class="arrow">›</span>
+    </a>
 
-<button class="app"
-onclick="openApp('https://web.whatsapp.com')">
-💬 WhatsApp
-</button>
+    <a class="app" href="https://web.whatsapp.com">
+      <span class="icon">💬</span>
+      WhatsApp Web
+      <span class="arrow">›</span>
+    </a>
 
-<button class="app"
-onclick="openApp('https://x.com')">
-𝕏 X
-</button>
+    <a class="app" href="https://x.com">
+      <span class="icon">𝕏</span>
+      X
+      <span class="arrow">›</span>
+    </a>
 
-<button class="app"
-onclick="openApp('https://www.linkedin.com')">
-💼 LinkedIn
-</button>
+    <a class="app" href="https://www.linkedin.com">
+      <span class="icon">💼</span>
+      LinkedIn
+      <span class="arrow">›</span>
+    </a>
 
-<button class="app"
-onclick="openApp('https://www.netflix.com')">
-🎬 Netflix
-</button>
+    <a class="app" href="https://www.netflix.com">
+      <span class="icon">🎬</span>
+      Netflix
+      <span class="arrow">›</span>
+    </a>
 
-<button class="app"
-onclick="openApp('https://open.spotify.com')">
-🎧 Spotify
-</button>
+    <a class="app" href="https://open.spotify.com">
+      <span class="icon">🎧</span>
+      Spotify
+      <span class="arrow">›</span>
+    </a>
 
-<button class="app"
-onclick="openApp('https://www.amazon.com')">
-🛒 Amazon
-</button>
+    <a class="app" href="https://www.amazon.com">
+      <span class="icon">🛒</span>
+      Amazon
+      <span class="arrow">›</span>
+    </a>
 
-<button class="app"
-onclick="openApp('https://www.google.com')">
-🔎 Google
-</button>
+    <a class="app" href="https://www.google.com">
+      <span class="icon">🔎</span>
+      Google
+      <span class="arrow">›</span>
+    </a>
 
-<script>
+    <a class="app" href="https://web.telegram.org">
+      <span class="icon">✈️</span>
+      Telegram Web
+      <span class="arrow">›</span>
+    </a>
 
-Telegram.WebApp.ready();
-Telegram.WebApp.expand();
+  </div>
 
-function openApp(url) {
+  <div class="footer">
+    Wondah App Hub
+  </div>
 
-  /*
-   * Navigate the current Mini App webview
-   * instead of using an iframe.
-   */
-  window.location.href = url;
-
-}
-
-</script>
+  <script>
+    if (window.Telegram && Telegram.WebApp) {
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();
+    }
+  </script>
 
 </body>
 </html>
